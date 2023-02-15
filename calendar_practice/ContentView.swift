@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var reservationdate = Date()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView{
+            Form{
+                Section(header: Text("Date & Time")) {
+                    DatePicker("Choose a date", selection: $reservationdate)
+                    
+                }}
+            .navigationTitle("Search events")
         }
-        .padding()
     }
 }
 
